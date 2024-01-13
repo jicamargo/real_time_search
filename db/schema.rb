@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_01_13_004337) do
+ActiveRecord::Schema[7.1].define(version: 2024_01_13_183831) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -20,6 +20,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_13_004337) do
     t.string "user"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "counter", default: 1
+    t.index ["ip_address", "user", "query"], name: "index_search_stories_on_ip_address_and_user_and_query", unique: true
   end
 
 end

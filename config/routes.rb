@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   get 'search/index'
   root "search#index" 
   get 'search/get_queries'
+  get 'search/reset'
 end
