@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   # root "posts#index"
   get 'search/index'
   root "search#index" 
+  get 'search/get_queries'
 end

@@ -1,9 +1,9 @@
-<div>
+<div data-controller="search">
   <h1>Real Time Search</h1>
 
-  <input id= "input" type="text" placeholder="Search..." />
+  <input id= "input" type="text" placeholder="Search..." data-action="input->search#search" data-search-target="input">
+  <button id="btnsearch">Search</button>
 
-  <ul id="results">
-
+  <ul id="result-list" data-search-target="resultList">
   </ul>
 </div>
