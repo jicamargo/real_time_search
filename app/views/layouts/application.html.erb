@@ -8,9 +8,14 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <%= stylesheet_link_tag 'styles' %>
   </head>
 
   <body>
+    <nav>
+      <%= link_to 'Search', search_index_path %>
+      <%= link_to 'Analytics', analytics_index_path %>
+    </nav>
     <%= yield %>
   </body>
 </html>

@@ -3,7 +3,7 @@ class CreateSearchStories < ActiveRecord::Migration[7.1]
     create_table :search_stories do |t|
       t.string :query
       t.string :ip_address
-      t.string :user
+      t.string :user_name
 
       t.timestamps
     end

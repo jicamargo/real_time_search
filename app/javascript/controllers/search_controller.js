@@ -11,13 +11,11 @@ export default class extends Controller {
   input(){
     const key = this.inputTarget.value.slice(-1);
 
-    console.log('key: ' + key);
     if (
       key === ' ' || 
       key === '.' || 
       key === ',' 
     ) {
-        console.log('llamando a search');
         this.search();
     }
   }

@@ -17,11 +17,11 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_13_183831) do
   create_table "search_stories", force: :cascade do |t|
     t.string "query"
     t.string "ip_address"
-    t.string "user"
+    t.string "user_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "counter", default: 1
-    t.index ["ip_address", "user", "query"], name: "index_search_stories_on_ip_address_and_user_and_query", unique: true
+    t.index ["ip_address", "user_name", "query"], name: "index_search_stories_on_ip_address_and_user_name_and_query", unique: true
   end
 
 end
