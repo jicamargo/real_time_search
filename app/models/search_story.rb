@@ -1,0 +1,2 @@
+class SearchStory < ApplicationRecord
+end
