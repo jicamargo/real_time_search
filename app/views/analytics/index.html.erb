@@ -1,0 +1,77 @@
+<h1>Search Analytics</h1>
+
+<h2>Queries by User and IP Address</h2>
+<table id='table_analytics_1'>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>IP Address</th>
+      <th>Query</th>
+      <th>Total Queries</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @analytics_data.each do |data| %>
+      <tr>
+        <td><%= data.user_name %></td>
+        <td><%= data.ip_address %></td>
+        <td><%= data.query %></td>
+        <td><%= data.total_queries %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<h2>Users with Most Queries</h2>
+<table id='table_analytics_2'>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Total Queries</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @user_queries.each do |query| %>
+      <tr>
+        <td><%= query.user_name %></td>
+        <td><%= query.total_queries %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<h2>Day of the Week with Most Queries</h2>
+<table id='table_analytics_3'>
+  <thead>
+    <tr>
+      <th>Day of Week</th>
+      <th>Total Queries</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @day_of_week_queries.each do |query| %>
+      <tr>
+        <td><%= day_of_week(query.day_of_week.to_i) %></td>
+        <td><%= query.total_queries %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<h2>Popular Words</h2>
+<table id='table_analytics_4'>
+  <thead>
+    <tr>
+      <th>Word</th>
+      <th>Total Searches</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @popular_words.each do |word, count| %>
+      <tr>
+        <td><%= word %></td>
+        <td><%= count %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

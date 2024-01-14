@@ -1,0 +1,100 @@
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f8f8f8;
+  color: #333;
+  margin: 20px;
+}
+
+/* nav */
+nav {
+  background-color: #007bff;
+  padding: 10px;
+  text-align: center;
+}
+
+/* nav links */
+nav a {
+  color: #fff; 
+  text-decoration: none;
+  margin: 0 15px; 
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: #ffd700;
+}
+
+/* main container  */
+[data-controller="search"] {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Search Title  */
+[data-controller="search"] h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+/* Description */
+[data-controller="search"] p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+/* Input */
+[data-controller="search"] input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+/* Buttons */
+[data-controller="search"] button {
+  padding: 10px 20px;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+/* Result List */
+[data-controller="search"] #result-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+/* result list elements */
+[data-controller="search"] #result-list li {
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin-bottom: 5px;
+}
+
+/* titles */
+h1, h2 {
+  color: #007bff;
+}
+
+/* tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+/* table cells */
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+/* table's odd rows  */
+tbody tr:nth-child(odd) {
+  background-color: #f2f2f2;
+}
+
+tbody tr:hover {
+  background-color: #ddd;
+}
