@@ -1,0 +1,10 @@
+<div class="container" data-controller="search" data-action="keydown.enter->search#search">
+  <h1>Real Time Search</h1>
+  <p>Which article are you looking for?</p>
+  <input id= "input" type="text" placeholder="Search..." data-action="input->search#input" data-search-target="input">
+  <button id="btnsearch" data-action="click->search#search">Search</button>
+  <button id="btnreset" data-action="click->search#reset">Reset</button>
+
+  <ul id="result-list" data-search-target="resultList">
+  </ul>
+</div>
