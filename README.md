@@ -36,8 +36,6 @@ Also provides a page for Analytics, where you can see the most searched words an
 - **Responsive Design:** Ensures a seamless experience across devices.
 - **User-Friendly Interface:** Provides a simple and intuitive search experience.
 - **Analytics:** This feature empowers administrators and users alike with valuable insights into search patterns, user behaviors, and trending queries.
-
--  **Analytics Tabless:**
   - **Queries by User and IP Address:** View detailed information about search queries, including user names, IP addresses, and total queries.
   - **Users with Most Queries:** Identify users who contribute the most to the search activity, providing a user-centric perspective.
   - **Day of the Week with Most Queries:** Analyze search patterns based on the day of the week, allowing for strategic planning and resource allocation.
