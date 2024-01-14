@@ -46,7 +46,7 @@ Also provides a page for Analytics, where you can see the most searched words an
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link](cooming soon)
+- [Live Demo Link](https://realtimesearch-njvo.onrender.com/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
