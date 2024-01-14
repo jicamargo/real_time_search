@@ -21,7 +21,7 @@ class AnalyticsController < ApplicationController
       .select('query')
       .map(&:query)
       .flat_map { |query| query.split(/\W+/) }
-      .reject { |word| %w[what how is are a an the].include?(word.downcase) }
+      .reject { |word| %w[what how is are a an the and].include?(word.downcase) }
       .group_by(&:downcase)
       .transform_values(&:count)
       .sort_by { |word, count| [-count, word] }

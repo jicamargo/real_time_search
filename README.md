@@ -11,6 +11,7 @@
     - [Key Features](#key-features)
   - [🚀 Live Demo](#live-demo)
 - [💻 Getting Started](#getting-started)
+- [💻 Testing the App](#testing-app)
 - [👥 Authors](#authors)
 - [🔭 Future Features](#future-features)
 - [🤝 Contributing](#contributing)
@@ -84,6 +85,28 @@ To run this App locally, follow these simple steps:
 5. Open your web browser and navigate to: http://localhost:3000/ to access the application. 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- GETTING STARTED -->
+
+## 💻 Testing the App <a name="testing-app"></a>
+
+### Running Tests
+Execute the following command to run the test suite:
+
+1. Install the dependencies:
+
+  `bundle install`
+
+2. Set up the test database
+
+  `rails db:test:prepare`
+
+3. Run the Test
+
+  `rspec`
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 
 <!-- AUTHORS -->
 
