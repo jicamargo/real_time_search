@@ -28,17 +28,13 @@ class SearchController < ApplicationController
   end
   
   def delete_incomplete_querie(user_name, search_query)
-    queries = SearchStory
-      .where(user_name: user_name)
-      .where("query ILIKE ?", "#{@search_query}%")
-      .pluck(:query)
-
     # delete the last word from the array
     query_words = search_query.strip.split(' ')
-    query_words.pop
-    incomplete_querie = query_words.join(' ')
-
-    SearchStory.where(user_name: user_name, query: incomplete_querie).delete_all
+    # Delete incomplete queries from the beginning to the second-to-last word
+    (0..query_words.length - 2).each do |i|
+      incomplete_query = query_words[0..i].join(' ')
+      SearchStory.where(user_name: user_name, query: incomplete_query).delete_all
+    end
   end
 
   def reset
