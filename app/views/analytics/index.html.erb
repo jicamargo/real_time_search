@@ -1,11 +1,10 @@
 <h1>Search Analytics</h1>
 
-<h2>Queries by User and IP Address</h2>
+<h2>Queries by User</h2>
 <table id='table_analytics_1'>
   <thead>
     <tr>
       <th>User</th>
-      <th>IP Address</th>
       <th>Query</th>
       <th>Total Queries</th>
     </tr>
@@ -14,7 +13,6 @@
     <% @analytics_data.each do |data| %>
       <tr>
         <td><%= data.user_name %></td>
-        <td><%= data.ip_address %></td>
         <td><%= data.query %></td>
         <td><%= data.total_queries %></td>
       </tr>

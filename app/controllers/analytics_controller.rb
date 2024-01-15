@@ -3,9 +3,9 @@ class AnalyticsController < ApplicationController
 
   def index
     @analytics_data = SearchStory.
-      group(:user_name, :ip_address, :query).
-      select('user_name, ip_address, query, sum(counter) as total_queries')
-      .order(:user_name, :ip_address, 'total_queries DESC')
+      group(:user_name, :query).
+      select('user_name, query, sum(counter) as total_queries')
+      .order(:user_name, 'total_queries DESC')
 
     @user_queries = SearchStory
       .group(:user_name)
@@ -21,7 +21,7 @@ class AnalyticsController < ApplicationController
       .select('query')
       .map(&:query)
       .flat_map { |query| query.split(/\W+/) }
-      .reject { |word| %w[what how is are a an the and].include?(word.downcase) }
+      .reject { |word| %w[what how is are a an the and i or not].include?(word.downcase) }
       .group_by(&:downcase)
       .transform_values(&:count)
       .sort_by { |word, count| [-count, word] }

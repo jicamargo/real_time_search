@@ -1,4 +1,6 @@
 class SearchController < ApplicationController
+  before_action :assign_user_name, only: [:index]
+
   def index
     respond_to do |format|
       format.html { render :index }
@@ -9,8 +11,7 @@ class SearchController < ApplicationController
   def get_queries
     @search_query = params[:query]
     @ip_address = request.remote_ip
-    @user_name ="Guest"  #created for future use
-
+    assign_user_name
     existing_story = SearchStory.find_by(ip_address: @ip_address, user_name: @user_name, query: @search_query)
 
     if existing_story
@@ -46,4 +47,12 @@ class SearchController < ApplicationController
     redirect_to root_path
   end
 
+  private
+
+  def assign_user_name
+    # assign user_name based on IP, use session for persistence
+    user_ip = request.remote_ip
+    @user_name = session[:user_name] || "Guest-#{user_ip}"
+    session[:user_name] = @user_name
+  end
 end
