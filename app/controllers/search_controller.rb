@@ -20,16 +20,16 @@ class SearchController < ApplicationController
         SearchStory.create(query: @search_query, ip_address: @ip_address, user_name: @user_name)
     end
 
-    delete_incomplete_querie(@ip_address, @user_name, @search_query)
+    delete_incomplete_querie(@user_name, @search_query)
 
     @search_query = params[:query]
     @search_results = SearchStory.where(ip_address: @ip_address).where("query ILIKE ?", "%#{@search_query}%").pluck(:query)
     render json: @search_results
   end
   
-  def delete_incomplete_querie(ip_address, user_name, search_query)
+  def delete_incomplete_querie(user_name, search_query)
     queries = SearchStory
-      .where(ip_address: ip_address, user_name: user_name)
+      .where(user_name: user_name)
       .where("query ILIKE ?", "#{@search_query}%")
       .pluck(:query)
 
@@ -38,12 +38,12 @@ class SearchController < ApplicationController
     query_words.pop
     incomplete_querie = query_words.join(' ')
 
-    SearchStory.where(ip_address: ip_address, query: incomplete_querie).delete_all
+    SearchStory.where(user_name: user_name, query: incomplete_querie).delete_all
   end
 
   def reset
-    @ip_address = request.remote_ip
-    SearchStory.where(ip_address: @ip_address).delete_all
+    assign_user_name
+    SearchStory.where(user_name: @user_name).delete_all
     redirect_to root_path
   end
 
