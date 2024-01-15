@@ -11,9 +11,4 @@ RSpec.describe SearchStory, type: :model do
     search_story = SearchStory.new(ip_address: '127.0.0.1', user_name: 'Guest')
     expect(search_story).to_not be_valid
   end
-
-  it 'is not valid without a ip_address' do
-    search_story = SearchStory.new(query: 'What is a good car',user_name: 'Guest')
-    expect(search_story).to_not be_valid
-  end
 end

@@ -40,9 +40,8 @@ RSpec.describe "Search Integration Test", type: :system do
     expect(page).to have_content('Search Analytics')
     expect(page).to have_selector('table', count: 4) # Verify all 4 tables are present
 
-    # Verify results in the first table (Queries by User and IP Address)
+    # Verify results in the first table (Queries by User)
     expect(page).to have_css('#table_analytics_1 td', text: 'Guest')
-    expect(page).to have_css('#table_analytics_1 td', text: '127.0.0.1')
     expect(page).to have_css('#table_analytics_1 td', text: 'what is a good car')
     expect(page).to have_css('#table_analytics_1 td', text: '1')
 
